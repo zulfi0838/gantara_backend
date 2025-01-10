@@ -1,16 +1,12 @@
 const express = require('express');
 const dotenv = require('dotenv');
 const dbMySQL = require('./config/db');
-const userRoutes = require('./routes/userRoutes'); // pastikan path benar
+const userRoutes = require('./routes/userRoutes');
 
 dotenv.config();
 
 const app = express();
-
-// Middleware untuk parsing body JSON
 app.use(express.json());
-
-// Gunakan route untuk /api/users hanya sekali
 app.use('/api/users', userRoutes);
 
 // Tes koneksi database
@@ -22,8 +18,5 @@ dbMySQL.getConnection((err) => {
     }
 });
 
-// Jalankan server
-const PORT = process.env.PORT || 5001;
-app.listen(PORT, () => {
-    console.log(`Server running on port ${PORT}`);
-});
+// Ekspor handler untuk digunakan oleh Vercel
+module.exports = app;
