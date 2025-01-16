@@ -1,1 +1,12 @@
-.vercel
+# Node.js dependencies
+node_modules/
+
+# Log files
+*.log
+
+# Environment variables
+.env
+
+# Miscellaneous
+.DS_Store
+*.swp
