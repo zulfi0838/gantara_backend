@@ -1,9 +1,10 @@
 {
   "name": "gantara-backend",
   "version": "1.0.0",
+  "description": "Backend for Gantara application",
   "main": "app.js",
   "scripts": {
-    "start": "node app.js",
+    "start": "node app.js", 
     "dev": "nodemon app.js"
   },
   "dependencies": {
@@ -13,10 +14,18 @@
     "dotenv": "^16.4.7",
     "express": "^4.21.1",
     "jsonwebtoken": "^9.0.2",
-    "mongoose": "^8.8.3",
     "mysql2": "^3.11.4"
   },
   "devDependencies": {
     "nodemon": "^3.1.7"
-  }
+  },
+  "engines": {
+    "node": ">=14.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/zulfi0838/gantara_backend.git"
+  },
+  "author": "zulfi0838",
+  "license": "MIT"
 }
