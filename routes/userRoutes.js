@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const db = require('../config/db');  // Pastikan path sesuai
+const db = require('../config/db'); // Pastikan path sesuai
 const bcrypt = require('bcryptjs');
 
 // Menambahkan user
@@ -8,7 +8,7 @@ router.post('/', (req, res) => {
   const { username, email, password, role } = req.body;
 
   // Debugging untuk melihat data yang diterima
-  console.log(req.body);  // Tambahkan log ini
+  console.log(req.body); // Tambahkan log ini
 
   // Validasi input
   if (!username || !email || !password || !role) {

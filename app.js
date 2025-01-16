@@ -1,16 +1,16 @@
 require('dotenv').config();
 const express = require('express');
-const bodyParser = require('body-parser');
 const cors = require('cors');
-const userRoutes = require('./routes/userRoutes');  // Pastikan path sesuai
+const bodyParser = require('body-parser');
+const userRoutes = require('./routes/userRoutes'); // Pastikan path sesuai
 
 const app = express();
 const port = process.env.PORT || 5001;
 
 // Middleware
 app.use(cors());
-app.use(express.json());  // Pastikan middleware ini ada
-app.use(express.urlencoded({ extended: true }));  // Pastikan middleware ini ada
+app.use(express.json()); // Middleware untuk parsing JSON
+app.use(express.urlencoded({ extended: true }));
 
 // Routes
 app.use('/api/users', userRoutes);
