@@ -8,7 +8,7 @@ router.post('/', (req, res) => {
   const { username, email, password, role } = req.body;
 
   // Debugging untuk melihat data yang diterima
-  console.log(req.body); // Tambahkan log ini
+  console.log("Request body:", req.body); // Debugging untuk melihat data yang diterima
 
   // Validasi input
   if (!username || !email || !password || !role) {
@@ -22,8 +22,10 @@ router.post('/', (req, res) => {
   const sql = 'INSERT INTO users (username, email, password, role) VALUES (?, ?, ?, ?)';
   db.query(sql, [username, email, hashedPassword, role], (err, result) => {
     if (err) {
+      console.error('Database error:', err); // Debugging untuk melihat error database
       return res.status(500).json({ message: "Database error", error: err });
     }
+    console.log("User added successfully:", result);
     res.status(201).json({ message: "User added successfully", userId: result.insertId });
   });
 });
