@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const db = require('../config/db'); // Pastikan path sesuai
+const db = require('../../../config/db'); // Pastikan path sesuai
 const bcrypt = require('bcryptjs');
 
 // Menambahkan user

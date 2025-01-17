@@ -3,7 +3,7 @@ const express = require('express');
 const cors = require('cors');
 const bodyParser = require('body-parser');
 const db = require('./config/db');  // Pastikan ini ada dan benar
-const userRoutes = require('./routes/userRoutes');  // Pastikan path sesuai
+const userRoutes = require('./api/controllers/routes/userRoutes');  // Pastikan path sesuai
 
 const app = express();
 const port = process.env.PORT || 5001;
